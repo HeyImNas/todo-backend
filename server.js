@@ -21,7 +21,7 @@ app.use(cors({
 app.use(express.json());
 
 // Connect to MongoDB
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://your-mongodb-connection-string';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/todos';
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 // Set port and start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 }); 

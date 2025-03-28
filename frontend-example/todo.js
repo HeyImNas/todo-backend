@@ -1,7 +1,7 @@
 // This is a sample JavaScript file for the frontend
-// Replace YOUR_RENDER_URL with the actual URL after deploying to Render
+// Replace YOUR_RAILWAY_URL with the actual URL after deploying to Railway
 
-const apiUrl = 'https://YOUR_RENDER_URL/api/todos';
+const apiUrl = 'https://YOUR_RAILWAY_URL/api/todos';
 
 document.addEventListener('DOMContentLoaded', fetchTodos);
 

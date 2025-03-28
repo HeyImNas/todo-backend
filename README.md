@@ -37,7 +37,7 @@ A RESTful API backend for a Todo List application built with Node.js, Express, a
 
 3. Create a `.env` file in the root directory based on `.env.example`
    ```
-   PORT=5000
+   PORT=3000
    MONGODB_URI=your-mongodb-connection-string
    ```
 
@@ -47,7 +47,32 @@ A RESTful API backend for a Todo List application built with Node.js, Express, a
 
 ## Deployment
 
-This application is designed to be deployed on Render.com.
+### Deploying to Railway
+
+1. Create a Railway account at https://railway.app
+2. Install the Railway CLI: `npm i -g @railway/cli`
+3. Login to Railway: `railway login`
+4. Initialize your project: `railway init`
+5. Provision a MongoDB database:
+   ```
+   railway add plugin mongodb
+   ```
+6. Link your MongoDB service with your project:
+   ```
+   railway link
+   ```
+7. Set up environment variables:
+   ```
+   railway variables set MONGODB_URI=YOUR_MONGODB_URI
+   ```
+8. Deploy your application:
+   ```
+   railway up
+   ```
+9. Once deployed, get your production URL:
+   ```
+   railway domain
+   ```
 
 ## Frontend Integration
 
