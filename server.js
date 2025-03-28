@@ -10,7 +10,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://heyimnas.github.io'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+}));
 app.use(express.json());
 
 // Connect to MongoDB
