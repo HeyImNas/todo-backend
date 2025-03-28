@@ -9,10 +9,14 @@ dotenv.config();
 // Create Express app
 const app = express();
 
-// Middleware
+// CORS configuration
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://heyimnas.github.io'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+  origin: '*', // Allow all origins temporarily to debug
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 app.use(express.json());
 
